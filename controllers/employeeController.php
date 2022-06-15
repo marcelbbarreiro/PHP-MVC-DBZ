@@ -63,3 +63,13 @@ function openForm()
 {
     require_once VIEWS . "/employee/employee.php";
 }
+
+function createEmployee()
+{
+    $response = createUser($_POST);
+    if ($response[0]) {
+        header("Location: index.php?controller=employee&action=getAllEmployees");
+    } else {
+        error("There is a database error, try again.");
+    }
+}
