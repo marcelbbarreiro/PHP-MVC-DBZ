@@ -73,3 +73,13 @@ function createEmployee()
         error("There is a database error, try again.");
     }
 }
+
+function updateEmployee()
+{
+    $response = updateUser($_POST);
+    if ($response[0]) {
+        header("Location: index.php?controller=employee&action=getAllEmployees");
+    } else {
+        error("There is a database error, try again.");
+    }
+}

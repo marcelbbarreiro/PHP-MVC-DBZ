@@ -20,7 +20,7 @@
             echo "<p>$error</p>";
         }
         ?>
-        <form class="mb-5 needs-validation" action="index.php?controller=employee&action=<?php echo isset($employee['id']) ? "updateEmployee" : "createEmployee" ?>" method="post">
+        <form class="mb-5 needs-validation" action="index.php?controller=employee&action=<?php echo isset($employee[0]['id']) ? "updateEmployee" : "createEmployee" ?>" method="post">
             <input type="hidden" name="id" value="<?php echo isset($employee[0]['id']) ? $employee[0]['id'] : null ?>">
             <div class="form-row">
                 <div class="col">
