@@ -35,3 +35,17 @@ WHERE e.id={$id};");
         return [];
     }
 }
+
+
+function deleteUserByID($id)
+{
+
+    $query = conn()->prepare("DELETE FROM employees  WHERE id={$id};");
+
+    try {
+        $query->execute();
+        return [true];
+    } catch (PDOException $e) {
+        return [false, $e];
+    }
+}

@@ -21,7 +21,7 @@
         }
         ?>
         <form class="mb-5 needs-validation" action="index.php?controller=employee&action=<?php echo isset($employee['id']) ? "updateEmployee" : "createEmployee" ?>" method="post">
-            <input type="hidden" name="id" value="<?php echo isset($employee['id']) ? $employee['id'] : null ?>">
+            <input type="hidden" name="id" value="<?php echo isset($employee[0]['id']) ? $employee[0]['id'] : null ?>">
             <div class="form-row">
                 <div class="col">
                     <div class="form-group">
@@ -110,7 +110,3 @@
 </body>
 
 </html>
-
-<?php
-
-print_r($employee);
