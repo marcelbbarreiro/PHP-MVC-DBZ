@@ -29,3 +29,18 @@ function error($errorMsg)
 {
     require_once VIEWS . "/error/error.php";
 }
+
+function getEmployee($request)
+{
+    $id = $request['id'];
+
+    $employee = getEmployeeBD($id);
+
+    if (isset($employee)) {
+
+        require_once VIEWS . "/employee/employee.php";
+    } else {
+
+        error("There is a database error, try again.");
+    }
+}
